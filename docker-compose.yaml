@@ -1,0 +1,42 @@
+version: '3'
+services:
+#  web:
+#    build: './web/.'
+#    command: python3 manage.py runserver 0.0.0.0:8000
+#    environment:
+#      - POSTGRES_PASSWORD=EzAce
+#      - POSTGRES_USER=EzAce
+#      - POSTGRES_DB_ODOO = odoo_storage
+#    volumes:
+#      - ./web:/code
+#    ports:
+#      - "8000:8000"
+#    depends_on:
+#      - db
+
+  odoo:
+    image: odoo:10.0
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=db
+      - USER=EzAce
+      - PASSWORD=EzAce
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+#      - ./config:/etc/odoo
+      - ./customModules:/mnt/extra-addons
+  db:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_PASSWORD=EzAce
+      - POSTGRES_USER=EzAce
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+
+volumes:
+  odoo-web-data:
+  odoo-db-data:
