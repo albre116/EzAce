@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangodoo',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'composeexample.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB_ODOO', "postgres"),
+        'NAME': os.getenv('POSTGRES_DB_DJANGO', "postgres"),
         'USER': os.getenv('POSTGRES_USER', "postgres"),
 	'PASSWORD': os.getenv('POSTGRES_PASSWORD', "postgres"),
         'HOST': 'db',
@@ -91,7 +92,13 @@ DATABASES = {
     }
 }
 
-
+ODOO_HOST = {
+    'USER': 'albre116@gmail.com',
+    'PASSWORD': 'SPm1s2t3',
+    'HOST': 'http://172.20.0.1',
+    'PORT': 8069,
+    'DB': 'albre116'
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -130,3 +137,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTHENTICATION_BACKENDS = (
+'djangodoo.auth.OdooAuthBackend',
+'django.contrib.auth.backends.ModelBackend',
+)
