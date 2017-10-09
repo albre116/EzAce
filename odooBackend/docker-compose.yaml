@@ -12,7 +12,7 @@ services:
       - PASSWORD=myodoo
     volumes:
       - odoo-web-data:/var/lib/odoo
-#      - ./config:/etc/odoo
+      - ./config:/etc/odoo
       - ./customModules:/mnt/extra-addons
   db:
     image: postgres:9.6

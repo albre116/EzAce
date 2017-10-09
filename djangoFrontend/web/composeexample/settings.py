@@ -86,18 +86,18 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('POSTGRES_DB_DJANGO', "postgres"),
         'USER': os.getenv('POSTGRES_USER', "postgres"),
-	'PASSWORD': os.getenv('POSTGRES_PASSWORD', "postgres"),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', "postgres"),
         'HOST': 'db',
         'PORT': 5432,
     }
 }
 
 ODOO_HOST = {
-    'USER': 'albre116@gmail.com',
-    'PASSWORD': 'SPm1s2t3',
+    'USER': 'EzAce@gmail.com',
+    'PASSWORD': 'EzAce',
     'HOST': 'http://172.20.0.1',
     'PORT': 8069,
-    'DB': 'albre116'
+    'DB': 'EzAce'
 }
 
 # Password validation
