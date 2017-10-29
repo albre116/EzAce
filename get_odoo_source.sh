@@ -2,7 +2,7 @@
 #cd /some/work/path
 
 ## Settings
-ODOO_BRANCHES=(10.0)  # update if needed
+ODOO_BRANCHES=(11.0)  # update if needed
 GITHUB_USER=albre116  # change it to your user
 
 ## Common functions

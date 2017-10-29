@@ -1,7 +1,7 @@
 version: '3'
 services:
   odoo:
-    image: odoo:10.0
+    image: odoo:11.0
     depends_on:
       - db
     ports:
@@ -12,7 +12,7 @@ services:
       - PASSWORD=myodoo
     volumes:
       - odoo-web-data:/var/lib/odoo
-      - ./config:/etc/odoo
+#      - ./config:/etc/odoo
       - ./customModules:/mnt/extra-addons
   db:
     image: postgres:9.6
