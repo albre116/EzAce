@@ -4,6 +4,7 @@ services:
     build: './web/.'
     command: python3 manage.py runserver 0.0.0.0:8000
     environment:
+      - BOX_IP=165.227.62.23
       - POSTGRES_PASSWORD=djangoAD
       - POSTGRES_USER=djangoAD
       - POSTGRES_DB_DJANGO = DjangoApplication

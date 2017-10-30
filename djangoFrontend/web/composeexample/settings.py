@@ -95,7 +95,7 @@ DATABASES = {
 ODOO_HOST = {
     'USER': 'EzAce@gmail.com',
     'PASSWORD': 'EzAce',
-    'HOST': 'http://172.20.0.1',
+    'HOST': 'http://' + os.getenv('BOX_IP','localhost'),
     'PORT': 8069,
     'DB': 'EzAce'
 }
